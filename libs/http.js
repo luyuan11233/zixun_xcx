@@ -3,9 +3,10 @@
  */
 const wx = require('../libs/wx');
 const http = {};
-const defaultHost = 'https://api.wenshendaka.com';
-// const defaultHost = 'https://api.dev.wenshendaka.com';
-const header = {};
+const defaultHost = 'https://api.hqtime.huanqiu.com/api';
+const header = {
+    clientversion:'Android/v9.3.7'
+};
 
 header['content-type'] = 'application/x-www-form-urlencoded';
 
@@ -21,20 +22,20 @@ header['content-type'] = 'application/x-www-form-urlencoded';
             if (res.header['Set-Cookie']) {
                 wx.setStorageSync('cookie', res.header['Set-Cookie'].split(';')[0])
             }
-            console.log('succ', res.data.data)
-            return res;
+            console.log('succ', res.data)
+            return res.data;
         }).catch((res) => {
-            console.log('fail', res)
-            if(res.data.msg){
-                let msg = res.data.msg;
-                if(res.data.msg != 'zh_cn:LOGIN_OVERDUE'){
-                    wx.showToast({
-                        title:msg,
-                        icon: 'none',
-                    })
-                }
-            }
-            wx.hideNavigationBarLoading()
+            // console.log('fail', res)
+            // if(res.data.msg){
+            //     let msg = res.data.msg;
+            //     if(res.data.msg != 'zh_cn:LOGIN_OVERDUE'){
+            //         wx.showToast({
+            //             title:msg,
+            //             icon: 'none',
+            //         })
+            //     }
+            // }
+            // wx.hideNavigationBarLoading()
             return res;
         });
     }

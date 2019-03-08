@@ -1,10 +1,633 @@
 /**app.wxss**/
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+}
+.center{
+  align-items: center;
+  justify-content: center;
+}
+.center_h{
+  align-items: center;
+}
+.center_v{
+  justify-content: center;
+}
+.wrap{
+  flex-wrap: wrap;
+}
 .container {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
   box-sizing: border-box;
-} 
+  background: #ffffff;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.scroll_container{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+.space_padding{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.space_margin{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.menu_container {
+  width: 100%;
+  height: 100rpx;
+  overflow: visible;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0rpx -10rpx 15rpx -5rpx rgba(0, 0, 0, 0.1);
+}
+
+.menu_left {
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: 10rpx
+}
+
+.menu_center {
+  width: 110rpx;
+  height: 110rpx;
+  margin-bottom: 20rpx;
+}
+
+.menu_right {
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: 10rpx
+}
+.refresh_list{
+  overflow:auto;
+  margin:auto;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0rpx;
+  right:0rpx;
+}
+.two_top_title{
+  position: sticky;
+  top: 0rpx;
+  background: #ffffff;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx
+}
+/*---------------------avatar样式--------------------*/
+.avatar{
+  width: 80rpx;
+  height:80rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+}
+.avatar_70{
+  width: 70rpx;
+  height:70rpx;
+  border-radius: 35rpx;
+  overflow: hidden;
+}
+.avatar_110{
+  width: 110rpx;
+  height:110rpx;
+  border-radius: 55rpx;
+  overflow: hidden;
+}
+.avatar_top{
+  height: 86rpx;
+  align-items: center;
+}
+.avatar_name{
+  font-size: 24rpx;
+  color: #202020;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+.avatar_shop{
+  font-size: 20rpx;
+  color: #aaaaaa;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+.avatar_content{
+  font-size: 30rpx;
+  color: #202020;
+  margin-top: 16rpx;
+
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:8;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  line-height: 50rpx;
+}
+.feed_avatar_content{
+  font-size: 30rpx;
+  color: #202020;
+  margin-top: 16rpx;
+  line-height: 50rpx;
+}
+.avatar_img{
+  width: 224rpx;
+  height: 224rpx;
+  border-radius: 6rpx;
+}
+.avatar_img_b{
+  width: 345rpx;
+  height: 458rpx;
+  border-radius: 6rpx;
+}
+.avatar_talk{
+  margin-top: 30rpx;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  border-radius: 6rpx;
+  background-color: #fafafa;
+  border: 1rpx solid #eeeeee;
+  font-size: 22rpx;
+  color: #808080;
+  display: inline;
+  line-height: 36rpx;
+}
+.avatar_talk_content{
+  font-size: 22rpx;
+  color: #00AAFF;
+  line-height: 36rpx;
+}
+.avatar_icon_location{
+  width: 24rpx;
+  height: 30rpx;
+}
+.avatar_location{
+  font-size: 22rpx;
+  color: #808080;
+  margin-left: 10rpx;
+}
+.avatar_icon_nice{
+  width: 30rpx;
+  height: 30rpx;
+}
+.avatar_icon_message{
+  width: 32rpx;
+  height: 30rpx;
+  margin-left: 30rpx;
+}
+
+.icon_create{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 55rpx;
+  right:20rpx;
+  bottom:60rpx;
+  position: fixed;
+  box-shadow: 0rpx 10rpx 30rpx 5rpx #dddddd;
+}
+/*---------------------avatar样式--------------------*/
+
+/*<!--   帖子详情 -->*/
+.feed_sale{
+  width:687rpx;
+  height:140rpx;
+  align-items: center;
+  background: #fff;
+
+  box-shadow: 0rpx 10rpx 30rpx 5rpx #dddddd;
+}
+.feed_follow_container{
+  width: 100rpx;
+  height:50rpx;
+  border-radius: 6rpx;
+  background: #ccc;
+  position: absolute;
+  right: 70rpx;
+}
+.feed_dis_follow_container{
+  width: 92rpx;
+  height:42rpx;
+  border-radius: 6rpx;
+  border: 4rpx solid #ff7700;
+  background: #ffffff;
+  position: absolute;
+  right: 70rpx;
+}
+.feed_price_container{
+  width: 100rpx;
+  height:50rpx;
+  border-radius: 6rpx;
+  background: #ff7700;
+  position:absolute;
+  right:50rpx;
+}
+.feed_ask_text{
+  color:#fff;
+  font-size: 24rpx;
+}
+.feed_ask_red_text{
+  color:#ff7700;
+  font-size: 26rpx;
+}
+.feed_nine_container{
+  width: 240rpx;
+  height:80rpx;
+  border-radius: 40rpx;
+  background: #ff7700;
+}
+.feed_imgs_container{
+  width:345rpx;
+  max-width: 690rpx;
+}
+.feed_dis_nine_container{
+  width: 240rpx;
+  height:80rpx;
+  border-radius: 40rpx;
+  background: #cccccc;
+}
+.feed_nice_icon{
+  width:40rpx;
+  height: 40rpx;
+}
+.feed_nice_text{
+  font-size: 30rpx;
+  color: #fff;
+}
+.feed_nine_tattoo_container{
+  width: 630rpx;
+  height:250rpx;
+  border-radius: 10rpx;
+  background: #f6f6f6;
+  border: 1rpx solid #eeeeee;
+}
+.feed_nine_tattoo_text{
+  font-size: 26rpx;
+  color: #808080;
+}
+.feed_nine_avatars_container{
+  flex-wrap: wrap;
+}
+.feed_avatar{
+  width:66rpx;
+  height: 66rpx;
+  border-radius: 33rpx;
+}
+.feed_comment_block{
+  width:8rpx;
+  height:24rpx;
+  background: #000;
+}
+.feed_comment_block_text{
+  font-size: 26rpx;
+  color: #202020;
+}
+.feed_nickname{
+  font-size: 24rpx;
+  color: #00AAFF;
+}
+.feed_date{
+  font-size: 18rpx;
+  color: #aaaaaa;
+}
+.feed_content{
+  font-size: 26rpx;
+  color: #202020;
+  width:608rpx;
+}
+.feed_nice_container{
+  position: absolute;
+  right:30rpx;
+}
+.feed_icon_nice{
+  width:22rpx;
+  height:22rpx;
+  margin-right: 10rpx;
+}
+.feed_icon_nice_text{
+  font-size: 20rpx;
+  color: #aaaaaa;
+}
+.feed_icon_nice_red_text{
+  font-size: 20rpx;
+  color: #fc6109;
+}
+.feed_comment_container{
+  background: #202020;
+  height: 90rpx;
+  width: 750rpx;
+  bottom: 0rpx;
+  position: fixed;
+}
+.feed_comment_input{
+  width: 550rpx;
+  height: 66rpx;
+  background: #404040;
+  margin-left: 20rpx;
+  border-radius: 8rpx;
+  padding-left: 20rpx;
+  font-size: 24rpx;
+  color: white;
+}
+.feed_comment_placeholder{
+  color: #808080;
+  font-size: 24rpx;
+}
+.feed_comment_button{
+  border-radius: 8rpx;
+  width: 116rpx;
+  height: 62rpx;
+  border: 2rpx solid #404040;
+  margin-left: 20rpx;
+  background: #101010;
+}
+.feed_comment_button_text{
+  font-size: 28rpx;
+  color: #aaaaaa;
+}
+.reply_list_container{
+  width: 548rpx;
+  background: #f6f6f6;
+  border-radius: 10rpx;
+  border: 2rpx solid #eeeeee;
+  padding: 20rpx;
+  margin-top: 16rpx;
+}
+.reply_content{
+  font-size: 26rpx;
+  color: #202020;
+}
+/*<!--   帖子详情 -->*/
+/*<!--   个人中心 -->*/
+.user_container{
+  width: 690rpx;
+  height: 340rpx;
+  border-radius: 10rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 10rpx 30rpx 5rpx #dddddd;
+  margin-top: -190rpx;
+}
+.user_mine_background{
+  width:750rpx;
+  height:190rpx;
+}
+.user_nickname{
+  font-size: 36rpx;
+  color:#202020;
+  font-weight: bold;
+}
+.user_company{
+  font-size: 24rpx;
+  color: #aaaaaa;
+}
+.user_follow_container{
+  height:81rpx;
+  justify-content:space-around;
+}
+.user_follow_count{
+  font-size: 40rpx;
+  color: #202020;
+}
+.user_follow_count_red{
+  font-size: 40rpx;
+  color: #ee0000;
+}
+.user_follow_text{
+  font-size: 22rpx;
+  color: #aaaaaa;
+}
+.user_third_container{
+  width: 690rpx;
+  height: 192rpx;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+  justify-content: space-around;
+  box-shadow: 0rpx 10rpx 30rpx 5rpx #dddddd;
+  margin-left: 30rpx;
+}
+.user_wszx{
+  width: 64rpx;
+  height: 60rpx;
+}
+.user_tadq{
+  width: 74rpx;
+  height: 60rpx;
+}
+.user_wssph{
+  width: 57rpx;
+  height: 60rpx;
+}
+.user_down_wsdk{
+  width:690rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+
+.user_my_feed_menu_container{
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: fixed;
+  top: 0rpx;
+  width: 750rpx;
+  left: 0rpx;
+  background: #ffffff;
+}
+.feed_empty{
+  width:94rpx;
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
+  height:100rpx;
+}
+.feed_empty_text{
+  font-size: 22rpx;
+  color: #cccccc;
+}
+/*<!--   个人中心 -->*/
+/*---------------------粉丝r样式--------------------*/
+.follow_name{
+  font-size: 28rpx;
+  color: #202020;
+  font-weight: bold;
+}
+.follow_company{
+  font-size: 20rpx;
+  color: #606060;
+}
+.follow_item{
+  border-bottom: 2rpx solid #eeeeee;
+  padding-bottom: 30rpx;
+  justify-content: space-between;
+}
+.follow_item_button{
+  width: 100rpx;
+  height:50rpx;
+  border-radius: 6rpx;
+  background: #ccc;
+  position: absolute;
+  right: 30rpx;
+}
+.follow_item_red_button{
+  width: 92rpx;
+  height:42rpx;
+  border-radius: 6rpx;
+  border: 4rpx solid #ff7700;
+  background: #ffffff;
+  position: absolute;
+  right: 30rpx;
+}
+.follow_action{
+  color: #202020;
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+
+
+
+/*---------------------粉丝r样式--------------------*/
+/*---------------------边距--------------------*/
+.left_5{
+  margin-left: 5rpx;
+}
+.left_6{
+  margin-left: 6rpx;
+}
+.left_8{
+  margin-left: 8rpx;
+}
+.left_9{
+  margin-left: 9rpx;
+}
+.left_14{
+  margin-left: 14rpx;
+}
+.left_16{
+  margin-left: 16rpx;
+}
+.left_18{
+  margin-left: 18rpx;
+}
+.left_20{
+  margin-left: 20rpx;
+}
+.left_30{
+  margin-left: 30rpx;
+}
+.left_40{
+  margin-left: 40rpx;
+}
+.left_50{
+  margin-left: 50rpx;
+}
+.left_70{
+  margin-left: 70rpx;
+}
+.top_60{
+  margin-top: 60rpx;
+}
+
+
+.top_5{
+  margin-top: 5rpx;
+}
+.top_6{
+  margin-top: 6rpx;
+}
+.top_9{
+  margin-top: 9rpx;
+}
+.top_10{
+  margin-top: 10rpx;
+}
+.top_14{
+  margin-top: 14rpx;
+}
+.top_18{
+  margin-top: 18rpx;
+}
+.top_20{
+  margin-top: 20rpx;
+}
+.top_30{
+  margin-top: 30rpx;
+}
+.top_35{
+  margin-top: 35rpx;
+}
+.top_40{
+  margin-top: 40rpx;
+}
+.top_50{
+  margin-top: 50rpx;
+}
+.top_90{
+  margin-top: 90rpx;
+}
+.top_120{
+  margin-top: 120rpx;
+}
+.bottom_10{
+  margin-bottom: 10rpx;
+}
+.bottom_50{
+  margin-bottom: 50rpx;
+}
+.bottom_120{
+  margin-bottom: 120rpx;
+}
+
+.margin_40{
+  margin: 40rpx;
+}
+.margin_30{
+  margin: 30rpx;
+}
+.padding_30{
+  padding: 30rpx;
+}
+.padding_40{
+  padding: 40rpx;
+}
+
+.width_750{
+  width:750rpx;
+}
+.width_690{
+  width:690rpx;
+}
+.width_610{
+  width: 610rpx;
+}
+.width_457{
+  width: 467rpx;
+}
+.bg_ffe40b{
+  background: #ffe40b;
+}
+.bg_white{
+  background: #ffffff;
+}
+.bg_e1e1e1{
+  background: #e1e1e1;
+}
+/*---------------------边距--------------------*/
+
+.line_b{
+  height: 2rpx;
+  background: #eeeeee;
+}
+.top_line{
+  border-top: 1rpx solid #eeeeee;
+}
